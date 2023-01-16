@@ -4,28 +4,31 @@ module.exports = {
     dest: './dist',
     theme: '@vuepress/theme-blog',
     repo: 'https://github.com/changhengheng/myblog',
-    plugins: {
-        '@vssue/vuepress-plugin-vssue': {
-            platform: 'github-v4',
-            owner: 'changhengheng',
-            repo: 'myblog',
-            clientId: '93bb6d5b29cac8573045',
-            clientSecret: '22c10df6736bfd771eca1595d4501d1311b530d6',
-        },
-    },
     themeConfig: {
         dateFormat: 'YYYY-MM-DD',
         nav: [
             {
-                text: 'Blog',
+                text: 'blog',
+                link: '/blog/'
+            },
+            {
+                text: '碎碎念',
                 link: '/informalessay/',
+            },
+            {
+                text: '阅读',
+                link: '/reading/',
+            },
+            {
+                text: 'Tags',
+                link: '/tag/',
             },
         ],
         footer: {
             contact: [
                 {
                     type: 'github',
-                    link: 'https://github.com/changhengheng/VuePressBlog',
+                    link: 'https://github.com/changhengheng/myblog',
                 },
             ],
             copyright: [
@@ -39,10 +42,30 @@ module.exports = {
                 id: 'informalEssay',
                 dirname: '_informalEssay',
                 path: '/informalessay/',
-                title: '博客',
+                title: '碎碎念',
                 itemPermalink: '/informalessay/:year/:month/:day/:slug',
                 frontmatter: { //Front matter for entry page.
                     tag: 'informalessay'
+                },
+            },
+            {
+                id: 'blog',
+                dirname: '_blog',
+                path: '/blog/',
+                title: '博客',
+                itemPermalink: '/blog/:year/:month/:day/:slug',
+                frontmatter: { //Front matter for entry page.
+                    tag: 'blog'
+                },
+            },
+            {
+                id: 'reading',
+                dirname: '_reading',
+                path: '/reading/',
+                title: '阅读',
+                itemPermalink: '/reading/:year/:month/:day/:slug',
+                frontmatter: { //Front matter for entry page.
+                    tag: 'reading'
                 },
             },
         ],
